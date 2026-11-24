@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "author": "João Victor Colpo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -120,
+      "left": 200,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir",
+      "top": 110,
+      "left": 200,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "mov",
+      "top": -70,
+      "left": 390,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rm",
+      "top": -70,
+      "left": 310,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "clima",
+      "top": 40,
+      "left": 390,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rc",
+      "top": 40,
+      "left": 310,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 165,
+      "left": 385,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "dht:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "dht:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:15",
+      "dht:SDA",
+      "green",
+      []
+    ],
+    [
+      "esp:3V3",
+      "pir:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "pir:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:4",
+      "pir:OUT",
+      "green",
+      []
+    ],
+    [
+      "esp:18",
+      "rm:1",
+      "green",
+      []
+    ],
+    [
+      "rm:2",
+      "mov:A",
+      "green",
+      []
+    ],
+    [
+      "mov:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:19",
+      "rc:1",
+      "red",
+      []
+    ],
+    [
+      "rc:2",
+      "clima:A",
+      "red",
+      []
+    ],
+    [
+      "clima:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:5",
+      "buzzer:1",
+      "orange",
+      []
+    ],
+    [
+      "buzzer:2",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ]
+}
